@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -5,19 +6,32 @@ int plus(int a, int b) { return a + b; }
 int minus(int a, int b) { return a - b; }
 int multiply(int a, int b) { return a * b; }
 int divided(int a, int b) { return a / b; }
+int (*Ans[])(int a, int b)={plus,minus,multiply,divided};
 int main()
 {
-	int a, c;
-	char b;
+	int a, b, t;
+	char c;
 	printf("key a Function \nEX: 1 + 1\n");
-	scanf("%i %c %i", &a, &b, &c);
+	scanf("%i %c %i", &a, &c, &b);
+	int a1=c;
+	printf("%d",a1);
+	switch(c)
+	{
+		case'+':
+			t=0;
+			break;
+		case'-':
+			t=1;
+			break;
+		case'*':
+			t=2;
+			break;
+		case'/':
+			t=3;
+			break;
+		default:
+			break;
+	}
 	//IF ELSE IF
-	if (b == '+')
-		printf("%d %c %d = %d\n", a, b, c, plus(a, c));
-	else if (b == '-')
-		printf("%d %c %d = %d\n", a, b, c, minus(a, c));
-	else if (b == '*')
-		printf("%d %c %d = %d\n", a, b, c, multiply(a, c));
-	else if (b == '/')
-		printf("%d %c %d = %d\n", a, b, c, divided(a, c));
+		printf("%d %c %d = %d\n", a, c, b,Ans[t](a,b) );
 }
