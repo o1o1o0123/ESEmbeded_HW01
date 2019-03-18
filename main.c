@@ -13,8 +13,6 @@ int main()
 	char c;
 	printf("key a Function \nEX: 1 + 1\n");
 	scanf("%i %c %i", &a, &c, &b);
-	int a1=c;
-	printf("%d",a1);
 	switch(c)
 	{
 		case'+':
